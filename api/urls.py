@@ -1,9 +1,8 @@
 from django.urls import path
-from .views import createAddress, viewallAddress, viewAddress
+from .views import AddressListView, AddressCreateView, AddressDetailView
 
 urlpatterns = [
-    path('api/v1/create-address', createAddress.as_view() ,name='Create Address'),
-    path('api/v1/view-all-address', viewallAddress.as_view(), name='View all Address'),
-    path('api/v1/view-address/<int:pk>', viewAddress.as_view(), name='View Address'),
-
+    path('api/v1/addresses/view', AddressListView.as_view(), name='address-list'),
+    path('api/v1/addresses/create', AddressCreateView.as_view(), name='address-create'),
+    path('api/v1/addresses/view/<int:pk>', AddressDetailView.as_view(), name='address-detail'),
 ]

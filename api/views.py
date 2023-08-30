@@ -7,7 +7,6 @@ class AddressListView(generics.ListAPIView):
     serializer_class = AddressGetSerializer
 
 class AddressCreateView(generics.CreateAPIView):
-    queryset = address.objects.all()
     serializer_class = AddressCreateSerializer
 
 class AddressDetailView(generics.RetrieveAPIView):

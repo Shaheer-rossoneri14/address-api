@@ -9,6 +9,7 @@ class countryID(models.Model):
     def __str__(self):
         return self.country_name
 
+
 class stateID(models.Model):
     state_id = models.BigAutoField(primary_key=True)
     state_name = models.CharField(max_length=100)
@@ -16,7 +17,8 @@ class stateID(models.Model):
 
     def __str__(self):
         return self.state_name
-    
+
+
 class cityID(models.Model):
     city_id = models.BigAutoField(primary_key=True)
     city_name = models.CharField(max_length=100)
@@ -25,11 +27,13 @@ class cityID(models.Model):
     def __str__(self):
         return self.city_name
 
+
 class pincode(models.Model):
     pin_code = models.CharField(primary_key=True, max_length=15, unique=True)
 
     def __str__(self):
         return self.pin_code
+
 
 class address(models.Model):
     id = models.BigAutoField(primary_key=True)
